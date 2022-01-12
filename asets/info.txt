@@ -1,0 +1,30 @@
+<!-- 
+
+
+Interview Task for Front-End Developer
+
+Introduction
+===============
+
+We need a website that has a simple navbar and a content below the navbar. Navbar should be responsive, it should has a logo at left and four  menu buttons at the right. "Homepage", "About", "Pricing" and "Docs". 
+
+When we click to homepage, it should scroll to top of the page. "About" should scroll to About section. And the "pricing" should scroll to pricing table. Scrolling should be smooth. "Docs" page is a different HTML page. 
+
+In this page, when we scroll the page to relevant content, it should update the URL and the left menu. URL can be "localhost/docs/item-1" and it should make "Item 1" menu button bold at the left menu. Also these menu items should be clickable and it will scroll to relevant content. 
+
+Requirements
+=================
+1) Navbar should be responsive and has a mobile menu.(Hamburger menu)
+2) Pricing tables will have different contents but same height. 
+3) Content can include a very long "lorem ipsum..." text.
+
+
+What are we looking for
+===================
+1) Code should be readable by anyone
+2) Performance and SEO analysis from Google Audit should be acceptable. Below 90 point. 
+3) Clean Architecture is also important. 
+
+Please do not use any library. Hover effects etc. will make it look better. If you have any questions do not hesitate to ask us.
+
+--!>
