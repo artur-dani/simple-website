@@ -4,6 +4,7 @@
 */
 :root {
   --color-primary: #10b9cf;
+  --color-primary-dark: #0a8b9e;
   --color-secondary: #999682;
 
   --color-gray-ligther: #e5e9ee;
@@ -11,7 +12,7 @@
   --color-gray-dark: #212529;
   --color-white: #fff;
 
-  --color-transparent: rgba(0, 0, 0, 0.9);
+  --color-transparent: rgba(255, 255, 255, 0.8);
 
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   --box-shadow--card: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
@@ -83,23 +84,22 @@ img {
   text-align: center;
   z-index: 99;
   transition: all 0.2s ease-in-out;
+  background-color: var(--color-transparent);
+  backdrop-filter: blur(6px);
 }
 
 .navbar--shadowed {
   box-shadow: var(--box-shadow);
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(6px);
+}
+
+.navbar.is-open {
+  height: 26rem;
+  box-shadow: var(--box-shadow);
 }
 
 .navbar__wrapper {
   display: block;
 }
-
-/* .navbar__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .navbar__logo-wrapper {
   display: flex;
@@ -120,10 +120,7 @@ img {
   position: absolute;
   display: block;
   width: 100%;
-  background-color: var(--color-transparent);
-  backdrop-filter: blur(6px);
   height: 0px;
-  transition: all 0.3s ease-in;
   overflow-y: hidden;
   top: 65px;
   left: 0;
@@ -131,16 +128,11 @@ img {
   height: 0px;
 }
 
-.navbar__list.is-shown {
-  height: calc(100vh - 65px);
+.is-open .navbar__list {
+  height: calc(26rem - 65px);
   overflow-y: hidden;
+  transition: height 0.2s ease-in;
 }
-
-/* .navbar__list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .navbar__list-item {
   padding-top: 0.4rem;
@@ -178,11 +170,39 @@ img {
 .navbar__link:hover::after {
   width: 100%;
   left: 0;
+  background: var(--color-primary-dark);
 }
 
 .navbar__link.active::after {
   width: 100%;
   left: 0;
+}
+
+.navbar__link:hover {
+  color: var(--color-primary-dark);
+}
+
+@media screen and (min-width: 768px) {
+  .menu-toggler {
+    display: none;
+  }
+
+  .navbar__wrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .navbar__list {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+    top: 0;
+    height: 65px;
+    background-color: transparent;
+    backdrop-filter: blur(0);
+  }
 }
 
 /*

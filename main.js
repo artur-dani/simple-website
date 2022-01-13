@@ -1,9 +1,9 @@
 const $menuToggler = document.querySelector(".menu-toggler");
-const $navbarList = document.querySelector(".navbar__list");
+const $navbar = document.querySelector(".navbar");
 
 $menuToggler.addEventListener("click", function () {
   $menuToggler.classList.toggle("is-active");
-  $navbarList.classList.toggle("is-shown");
+  $navbar.classList.toggle("is-open");
 });
 
 const navbar = document.querySelector(".navbar");
