@@ -6,6 +6,7 @@
   --color-primary: #10b9cf;
   --color-secondary: #999682;
 
+  --color-gray-ligther: #e5e9ee;
   --color-gray-ligth: #4c5055;
   --color-gray-dark: #212529;
   --color-white: #fff;
@@ -62,15 +63,6 @@ img {
 =========================
     Utility Classes
 */
-.container {
-  width: 100%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-right: auto;
-  margin-left: auto;
-
-  max-width: 1080px;
-}
 
 .lead {
   font-size: 1.25rem;
@@ -513,22 +505,40 @@ img {
 =========================
     LAYOUT
 */
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 1080px;
+}
+
 main {
   padding-top: 65px;
   padding-bottom: 65px;
 }
 
 .section {
-  padding-top: 3rem;
+  padding-top: 3.4rem;
   padding-bottom: 3rem;
   text-align: center;
 }
 
-.section-title {
+.section__header {
+  margin-bottom: 3rem;
+}
+
+.section__title {
   font-size: calc(1.425rem + 2vw);
   line-height: 1.2;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.section--gray {
+  background-color: var(--color-gray-ligther);
 }
 
 .flex-grid {
