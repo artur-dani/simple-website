@@ -8,7 +8,7 @@
     <title>Finage Site</title>
   </head>
   <body>
-    <header id="home">
+    <header id="home" class="js-section">
       <nav class="navbar">
         <div class="container navbar__wrapper">
           <div class="navbar__logo-wrapper">
@@ -17,7 +17,7 @@
 
           <ul class="navbar__list">
             <li class="navbar__list-item">
-              <a class="navbar__link active" href="#home">Home</a>
+              <a class="navbar__link" href="#home">Home</a>
             </li>
             <li class="navbar__list-item">
               <a class="navbar__link" href="#about">About</a>
@@ -45,19 +45,30 @@
     </header>
 
     <main>
-      <section id="about" class="section">
+      <section id="about" class="section js-section">
         <div class="container">
-          <h2 class="section__title">About Us</h2>
-          <p class="lead">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-            minima, quod ea, libero obcaecati soluta voluptatum culpa nobis ad,
-            dolore laudantium inventore totam deleniti dolorum odit deserunt
-            eum? Est,
-          </p>
+          <div class="flex-grid flex-grid--reverse">
+            <div class="col col-1-of-2">
+              <h2 class="section__title">About Us</h2>
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                minima, quod ea, libero obcaecati soluta voluptatum culpa nobis
+                ad, dolore laudantium inventore totam deleniti dolorum odit
+                deserunt eum? Est,
+              </p>
+            </div>
+            <div class="col col-1-of-2">
+              <img
+                class="about-img"
+                src="./asets/undraw_data_processing_yrrv.svg"
+                alt="data processing image"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="pricing" class="section section--gray">
+      <section id="pricing" class="section section--gray js-section">
         <div class="container">
           <header class="section__header">
             <h2 class="section__title">

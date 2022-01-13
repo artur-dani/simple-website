@@ -1,17 +1,59 @@
 const $menuToggler = document.querySelector(".menu-toggler");
 const $navbar = document.querySelector(".navbar");
+const $navbarLinks = document.querySelectorAll(".navbar__link");
+const $sections = document.querySelectorAll(".js-section");
 
 $menuToggler.addEventListener("click", function () {
   $menuToggler.classList.toggle("is-active");
   $navbar.classList.toggle("is-open");
 });
 
-const navbar = document.querySelector(".navbar");
+function changeLinkState() {
+  let index = $sections.length;
 
-window.addEventListener("scroll", () => {
+  while (--index && window.scrollY + 10 < $sections[index].offsetTop) {}
+
+  $navbarLinks.forEach((link) => link.classList.remove("active"));
+  $navbarLinks[index].classList.add("active");
+  console.log(index, $navbarLinks.length);
+}
+
+changeLinkState();
+
+function changeNavbarState() {
   if (window.scrollY > 70) {
-    navbar.classList.add("navbar--shadowed");
+    $navbar.classList.add("navbar--shadowed");
   } else {
-    navbar.classList.remove("navbar--shadowed");
+    $navbar.classList.remove("navbar--shadowed");
   }
-});
+}
+
+// Throttle function to limit the number of times the function is called for better performance
+const throttle = (func, limit) => {
+  let lastFunc;
+  let lastRan;
+  return function () {
+    const context = this;
+    const args = arguments;
+    if (!lastRan) {
+      func.apply(context, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(function () {
+        if (Date.now() - lastRan >= limit) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+};
+
+window.addEventListener(
+  "scroll",
+  throttle(function () {
+    changeLinkState();
+    changeNavbarState();
+  }, 200)
+);
