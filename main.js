@@ -13,7 +13,7 @@ $menuToggler.addEventListener("click", function () {
 function changeLinkState() {
   let index = $sections.length;
 
-  while (--index && window.scrollY + 10 < $sections[index].offsetTop) {}
+  while (--index && window.scrollY + 50 < $sections[index].offsetTop) {}
 
   $navbarLinks.forEach((link) => link.classList.remove("active"));
   $navbarLinks[index].classList.add("active");
@@ -22,7 +22,7 @@ function changeLinkState() {
 function changeSidebarLinkState() {
   let index = $sectionsDocs.length;
 
-  while (--index && window.scrollY + 60 < $sectionsDocs[index].offsetTop) {}
+  while (--index && window.scrollY + 100 < $sectionsDocs[index].offsetTop) {}
 
   $menuItems.forEach((link) => link.classList.remove("active"));
   $menuItems[index].classList.add("active");

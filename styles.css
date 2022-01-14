@@ -56,6 +56,9 @@ ol,
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+}
 
 img {
   max-width: 100%;
@@ -75,6 +78,10 @@ img {
 
 .text-center {
   text-align: center;
+}
+
+.pt-5 {
+  padding-top: 5rem;
 }
 /*
 =========================
@@ -152,7 +159,6 @@ img {
 
 .navbar__link {
   color: var(--color-primary);
-  text-decoration: none;
 
   padding: 0.5rem 1rem;
   position: relative;
@@ -724,16 +730,25 @@ main {
 .menu__item {
   align-items: center;
   display: flex;
-  padding: 0.5rem 0 0.5rem 0.4rem;
   font-size: 1rem;
   transition: all 0.15s linear;
   cursor: pointer;
+}
+.menu__item.active {
+  font-weight: bold;
 }
 .menu__item:hover,
 .menu__item.active {
   color: #000;
   background-color: rgba(0, 0, 0, 0.1);
-  font-weight: bold;
+}
+
+.menu__item > a {
+  color: var(--color-primary);
+  width: 100%;
+  height: 100%;
+  padding: 0.6rem;
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
