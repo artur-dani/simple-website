@@ -2,6 +2,8 @@ const $menuToggler = document.querySelector(".menu-toggler");
 const $navbar = document.querySelector(".navbar");
 const $navbarLinks = document.querySelectorAll(".navbar__link");
 const $sections = document.querySelectorAll(".js-section");
+const $sectionsDocs = document.querySelectorAll(".js-section-doc");
+const $menuItems = document.querySelectorAll(".menu__item");
 
 $menuToggler.addEventListener("click", function () {
   $menuToggler.classList.toggle("is-active");
@@ -15,10 +17,16 @@ function changeLinkState() {
 
   $navbarLinks.forEach((link) => link.classList.remove("active"));
   $navbarLinks[index].classList.add("active");
-  console.log(index, $navbarLinks.length);
 }
 
-changeLinkState();
+function changeSidebarLinkState() {
+  let index = $sectionsDocs.length;
+
+  while (--index && window.scrollY + 60 < $sectionsDocs[index].offsetTop) {}
+
+  $menuItems.forEach((link) => link.classList.remove("active"));
+  $menuItems[index].classList.add("active");
+}
 
 function changeNavbarState() {
   if (window.scrollY > 70) {
@@ -50,10 +58,23 @@ const throttle = (func, limit) => {
   };
 };
 
+if ($sections.length) {
+  changeLinkState();
+}
+
+if ($sectionsDocs.length) {
+  changeSidebarLinkState();
+}
+
 window.addEventListener(
   "scroll",
   throttle(function () {
-    changeLinkState();
+    if ($sections.length) {
+      changeLinkState();
+    }
+    if ($sectionsDocs.length) {
+      changeSidebarLinkState();
+    }
     changeNavbarState();
   }, 200)
 );
