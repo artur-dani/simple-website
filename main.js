@@ -26,6 +26,12 @@ function changeSidebarLinkState() {
 
   $menuItems.forEach((link) => link.classList.remove("active"));
   $menuItems[index].classList.add("active");
+  if (window.history.pushState) {
+    var urlHash =
+      "/docs/" +
+      $menuItems[index].children[0].getAttribute("href").replace("#", "");
+    window.history.pushState(null, null, urlHash);
+  }
 }
 
 function changeNavbarState() {
