@@ -84,3 +84,17 @@ window.addEventListener(
     changeNavbarState();
   }, 200)
 );
+
+document.onclick = function (e) {
+  e = e || window.event;
+  const element = e.target || e.srcElement;
+  const host = window.location.host;
+
+  if (
+    element.classList.contains("js-doc-link" && host === "artur-dani.github.io")
+  ) {
+    window.location.href = "https://artur-dani.github.io/simple-website/";
+
+    return false; // prevent default action and stop event propagation
+  }
+};
