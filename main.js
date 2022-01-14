@@ -91,7 +91,8 @@ document.onclick = function (e) {
   const host = window.location.host;
 
   if (
-    element.classList.contains("js-doc-link" && host === "artur-dani.github.io")
+    element.classList.contains("js-doc-link") &&
+    host === "artur-dani.github.io"
   ) {
     window.location.href = "https://artur-dani.github.io/simple-website/";
 
