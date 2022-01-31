@@ -208,7 +208,7 @@ img {
   .navbar__list {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     position: relative;
     top: 0;
     height: 65px;
